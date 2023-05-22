@@ -12,8 +12,14 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 ICON = pygame.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
 
 RUNNING = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 1.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 3.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 4.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 5.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 6.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 7.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 8.png")),
 ]
 
 RUNNING_SHIELD = [
@@ -26,7 +32,7 @@ RUNNING_HAMMER = [
     pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
 ]
 
-JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJump.png"))
+JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Luffy/combos/combo 4/luffy combo 51.png"))
 JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png"))
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
