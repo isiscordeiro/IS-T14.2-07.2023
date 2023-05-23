@@ -37,8 +37,8 @@ JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.pn
 JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
 
 DUCKING = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "LUffy/combos/combo 5/luffy combo 57.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "LUffy/combos/combo 5/luffy combo 58.png")),
 ]
 
 DUCKING_SHIELD = [
@@ -76,3 +76,7 @@ BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
 DEFAULT_TYPE = "default"
+
+GAME_OVER = pygame.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
+
+RESET = pygame.image.load(os.path.join(IMG_DIR, 'Other/Reset.png'))

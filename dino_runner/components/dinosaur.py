@@ -1,9 +1,9 @@
 import pygame
 
-from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING
+from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING, SCREEN_WIDTH
 
-Y_POS = 335
-Y_POS_DUCK = 340
+Y_POS = 310
+Y_POS_DUCK = 350
 JUMP_VEL = 8.5
 
 class Dinosaur:
@@ -34,7 +34,7 @@ class Dinosaur:
         if user_input[pygame.K_RIGHT]:
             self.forward()
         if user_input[pygame.K_LEFT]:
-            self.back()
+            self.backward()
             
         if self.dino_run:
             self.run()
@@ -47,19 +47,19 @@ class Dinosaur:
             self.step_count = 0
     
     def run(self):
-        self.image = RUNNING[self.step_count//2]
+        self.image = pygame.transform.scale(RUNNING[self.step_count // 2], (75, 100))
         self.dino_rect.y = Y_POS
         
         self.step_count+=1
     
     def duck(self):
-        self.image = DUCKING[self.step_count//3]
+        self.image = pygame.transform.scale(DUCKING[self.step_count // 3], (40, 60))
         self.dino_rect.y = Y_POS_DUCK
         
         self.step_count+=1
     
     def jump(self):
-        self.image = JUMPING
+        self.image = pygame.transform.scale(JUMPING, (70, 105))
         
         if self.dino_jump:
             self.dino_rect.y -= self.jump_vel*4
@@ -72,12 +72,19 @@ class Dinosaur:
 
     def forward(self):
         # movendo para frente
-        self.dino_rect.x += 5
+        new_x = self.dino_rect.x + 5
 
-    def back(self):
+        # verifica se a nova posição não ultrapassa os limites da tela
+        if new_x + self.dino_rect.width <= SCREEN_WIDTH:
+            self.dino_rect.x = new_x
+
+    def backward(self):
         # movendo para trás
-        self.dino_rect.x -= 5
+        new_x = self.dino_rect.x - 5
+
+        # verifica se a nova posição não ultrapassa os limites da tela
+        if new_x >= 0:
+            self.dino_rect.x = new_x
     
     def draw(self, screen):
         screen.blit(self.image,(self.dino_rect.x, self.dino_rect.y))
-        
