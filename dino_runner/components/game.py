@@ -61,10 +61,12 @@ class Game:
 
     def update_score(self):
         self.score+=1
+        self.save_progress()
 
     def update_speed(self):
         if self.score % 100 == 0:
             self.game_speed += 10
+            self.save_progress()
         
     def draw(self):
         self.clock.tick(FPS)
@@ -135,3 +137,7 @@ class Game:
         self.player = Dinosaur()
         self.score = 0
         self.game_speed = 20
+    
+    def save_progress(self):
+        with open('saved_data.txt', 'w') as file:
+            file.write(f'{self.game_speed}, {self.score}\n')
