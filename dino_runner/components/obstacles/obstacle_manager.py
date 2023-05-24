@@ -19,17 +19,13 @@ class ObstacleManager:
     def update(self, game):
         if len(self.obstacles) == 0:
             if random.random() < 0.5:
-                position = 330
-                self.obstacles.append(Cactus(SMALL_CACTUS[random.randint(0, 2)], position))
+                self.obstacles.append(Cactus(SMALL_CACTUS[random.randint(0, 2)]))
             elif random.random() < 0.8:
-                position = 330
-                self.obstacles.append(Bird(BIRD[0], position))
-            elif random.random() < 0.9:
-                position = 270
-                self.obstacles.append(Bird(BIRD[0], position))
+                self.obstacles.append(Bird(BIRD))
             else:
-                position = 305
-                self.obstacles.append(Cactus(LARGE_CACTUS[random.randint(0,2)], position))
+                cactus = Cactus(LARGE_CACTUS[random.randint(0,2)])
+                cactus.rect.y = 305 # mudando a posição do cactus largo
+                self.obstacles.append(cactus)
         
         for obstacle in self.obstacles:
             obstacle.update(game.game_speed, self.obstacles)
