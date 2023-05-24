@@ -47,6 +47,11 @@ class ObstacleManager:
                             pygame.quit() # encerrar o módulo pygame
                             sys.exit() # finalizar o programa
                             #game.death_count += 1
+                    
+                    if restart_pressed:
+                        self.obstacles.clear()
+                        game.reset_game()
+                        break
 
                 self.obstacles.clear()
                 break

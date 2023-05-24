@@ -73,6 +73,7 @@ class Game:
         self.draw_clouds()
         self.player.draw(self.screen)
         self.draw_score()
+        self.draw_speed()
         self.obstacle_manager.draw(self.screen)
         
         pygame.display.flip()
@@ -105,6 +106,13 @@ class Game:
         font = pygame.font.Font(FONT_STYLE, 22)
         score_text = font.render("Score: " + str(self.score), True, (0, 0, 0))
         self.screen.blit(score_text, (SCREEN_WIDTH - score_text.get_width() - 10, 10))
+
+    def draw_speed(self):
+        speed_km_per_h = self.game_speed * (10 * FPS) / 1000 # converter a velocidade de pixels por quadro para km/h
+
+        font = pygame.font.Font(FONT_STYLE, 22)
+        speed_text = font.render("Speed: " + str(speed_km_per_h) + " km/h", True, (0, 0, 0))
+        self.screen.blit(speed_text, (10, 10))
 
     def draw_background(self):
         image_width = BG.get_width()
