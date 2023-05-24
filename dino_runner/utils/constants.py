@@ -9,6 +9,8 @@ FPS = 30
 OBSTACLE_Y_POS = 330
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
+FONT_STYLE = "freesansbold.ttf"
+
 # Assets Constants
 ICON = pygame.image.load(os.path.join(IMG_DIR, "Luffy/parado/luffy parado 1.png"))
 

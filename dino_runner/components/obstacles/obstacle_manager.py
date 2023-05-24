@@ -46,6 +46,7 @@ class ObstacleManager:
                         if event.type == pygame.QUIT: # se o jogador fechar a janela
                             pygame.quit() # encerrar o módulo pygame
                             sys.exit() # finalizar o programa
+                            #game.death_count += 1
 
                 self.obstacles.clear()
                 break
@@ -61,3 +62,6 @@ class ObstacleManager:
     def show_reset(self):
         screen = pygame.display.get_surface() # obter a superfície da tela
         screen.blit(RESET, (restart_x, restart_y))
+
+    def reset_obstacles(self):
+        self.obstacles.clear()
