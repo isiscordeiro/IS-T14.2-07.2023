@@ -26,32 +26,32 @@ RUNNING = [
 ]
 
 RUNNING_SHIELD = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/escudo/luffy correndo escudo.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 2.png")),
 ]
 
 RUNNING_HAMMER = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Hammer.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/martelo/luffy correndo martelo.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/correndo/luffy correndo 2.png")),
 ]
 
 JUMPING = pygame.image.load(os.path.join(IMG_DIR, "Luffy/combos/combo 4/luffy combo 51.png"))
-JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpShield.png"))
-JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoJumpHammer.png"))
+JUMPING_SHIELD = pygame.image.load(os.path.join(IMG_DIR, "Luffy/escudo/luffy pulando escudo.png"))
+JUMPING_HAMMER = pygame.image.load(os.path.join(IMG_DIR, "Luffy/martelo/luffy pulando martelo.png"))
 
 DUCKING = [
-    pygame.image.load(os.path.join(IMG_DIR, "LUffy/combos/combo 5/luffy combo 57.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "LUffy/combos/combo 5/luffy combo 58.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/combos/combo 5/luffy combo 57.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/combos/combo 5/luffy combo 58.png")),
 ]
 
 DUCKING_SHIELD = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Shield.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/escudo/luffy duck escudo2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/escudo/luffy duck escudo1.png")),
 ]
 
 DUCKING_HAMMER = [
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Hammer.png")),
-    pygame.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/martelo/luffy duck martelo.png")),
+    pygame.image.load(os.path.join(IMG_DIR, "Luffy/combos/combo 5/luffy combo 57.png")),
 ]
 
 SMALL_CACTUS = [
@@ -71,6 +71,7 @@ BIRD = [
 ]
 
 CLOUD = pygame.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
+
 SHIELD = pygame.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
 HAMMER = pygame.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
 
@@ -79,6 +80,8 @@ BG = pygame.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 HEART = pygame.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
 DEFAULT_TYPE = "default"
+SHIELD_TYPE = "shield"
+HAMMER_TYPE = "hammer"
 
 GAME_OVER = pygame.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
 
