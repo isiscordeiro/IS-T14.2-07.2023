@@ -4,7 +4,7 @@ import sys
 
 from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.bird import Bird
-from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD
+from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, GAME_OVER, RESET, SCREEN_HEIGHT, SCREEN_WIDTH
 
 class ObstacleManager:
     def __init__(self):
@@ -26,31 +26,12 @@ class ObstacleManager:
             
             if game.player.dino_rect.colliderect(obstacle.rect):
                 if not game.player.has_power_up:
-                    game.draw_game_over()
-
-                    pygame.display.flip() # atualizar a tela
-
-                    pygame.time.delay(500)
-                    
-                    restart_pressed = False
-                    while not restart_pressed: # aguardar até que uma tecla seja pressionado
-                        for event in pygame.event.get():
-                            if event.type == pygame.KEYDOWN:
-                                restart_pressed = True
-                            if event.type == pygame.QUIT: # se o jogador fechar a janela
-                                pygame.quit() # encerrar o módulo pygame
-                                sys.exit() # finalizar o programa
-                        
-                        if restart_pressed:
-                            game.death_count += 1
-                            self.obstacles.clear()
-                            game.reset_game()
-                            break
+                    self.game_over(game.screen)
+                    game.playing = False
+                    game.death_count += 1
+                    self.reset_obstacles()
                 else:
                     self.obstacles.remove(obstacle)
-
-                self.obstacles.clear()
-                break
             
     def draw(self,screen):
         for obstacle in self.obstacles:
@@ -58,3 +39,15 @@ class ObstacleManager:
 
     def reset_obstacles(self):
         self.obstacles.clear()
+
+    def game_over(self, screen):
+        game_over_x = (SCREEN_WIDTH - GAME_OVER.get_width()) // 2
+        game_over_y = (SCREEN_HEIGHT - GAME_OVER.get_height()) // 2 - 45
+        screen.blit(GAME_OVER, (game_over_x, game_over_y))
+
+        restart_x = (SCREEN_WIDTH - RESET.get_width()) // 2
+        restart_y = (SCREEN_HEIGHT - RESET.get_height()) // 2 + 45
+        screen.blit(RESET, (restart_x, restart_y))
+
+        pygame.display.update()
+        pygame.time.delay(1500)
