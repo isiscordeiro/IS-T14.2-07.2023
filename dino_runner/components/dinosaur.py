@@ -2,7 +2,7 @@ import pygame
 
 from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING, SCREEN_WIDTH, DEFAULT_TYPE,\
     SHIELD_TYPE, RUNNING_SHIELD, DUCKING_SHIELD, JUMPING_SHIELD, HAMMER_TYPE, RUNNING_HAMMER,\
-    DUCKING_HAMMER, JUMPING_HAMMER
+    DUCKING_HAMMER, JUMPING_HAMMER, JUMP_SOUND
 
 RUN_IMG = {DEFAULT_TYPE: RUNNING, SHIELD_TYPE: RUNNING_SHIELD, HAMMER_TYPE: RUNNING_HAMMER}
 DUCK_IMG = {DEFAULT_TYPE: DUCKING, SHIELD_TYPE: DUCKING_SHIELD, HAMMER_TYPE: DUCKING_HAMMER}
@@ -31,6 +31,8 @@ class Dinosaur:
         self.dino_duck = False
         
         self.jump_vel = JUMP_VEL
+
+        self.jump_sound_played = False # variável de controle para verificar se o som já foi reproduzido
     
     def update(self, user_input):
         if user_input[pygame.K_UP]:
@@ -75,11 +77,15 @@ class Dinosaur:
         if self.dino_jump:
             self.dino_rect.y -= self.jump_vel*4
             self.jump_vel -= 0.8
+            if not self.jump_sound_played:  # verifica se o som ainda não foi reproduzido
+                JUMP_SOUND.play()
+                self.jump_sound_played = True # marca que o som foi reproduzido
             
         if self.jump_vel <- JUMP_VEL:
             self.dino_rect_y = Y_POS
             self.dino_jump = False
             self.jump_vel = JUMP_VEL
+            self.jump_sound_played = False # reinicia a variável de controle do som
 
     def forward(self):
         # movendo para frente

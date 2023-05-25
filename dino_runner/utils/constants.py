@@ -92,3 +92,4 @@ RESET = pygame.image.load(os.path.join(IMG_DIR, 'Other/Reset.png'))
 
 DIE_SOUND = pygame.mixer.Sound('dino_runner/assets/Sounds/die.ogg')
 POWER_UP_SOUND = pygame.mixer.Sound('dino_runner/assets/Sounds/powerUp.ogg')
+JUMP_SOUND = pygame.mixer.Sound('dino_runner/assets/Sounds/jump.ogg')
