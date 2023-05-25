@@ -1,10 +1,9 @@
 import random
 import pygame
-import sys
 
 from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.bird import Bird
-from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, GAME_OVER, RESET, SCREEN_HEIGHT, SCREEN_WIDTH
+from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, GAME_OVER, RESET, SCREEN_HEIGHT, SCREEN_WIDTH, DIE_SOUND
 
 class ObstacleManager:
     def __init__(self):
@@ -48,6 +47,8 @@ class ObstacleManager:
         restart_x = (SCREEN_WIDTH - RESET.get_width()) // 2
         restart_y = (SCREEN_HEIGHT - RESET.get_height()) // 2 + 45
         screen.blit(RESET, (restart_x, restart_y))
+
+        DIE_SOUND.play()
 
         pygame.display.update()
         pygame.time.delay(1500)

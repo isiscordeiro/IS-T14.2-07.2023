@@ -1,7 +1,7 @@
 import random
 import pygame
 
-from dino_runner.utils.constants import SHIELD_TYPE, HAMMER_TYPE
+from dino_runner.utils.constants import SHIELD_TYPE, HAMMER_TYPE, POWER_UP_SOUND
 from dino_runner.components.power_ups.shield import Shield
 from dino_runner.components.power_ups.hammer import Hammer
 
@@ -25,6 +25,8 @@ class PowerUpManager:
                     player.type = SHIELD_TYPE
                 if isinstance(power_up, Hammer):
                     player.type = HAMMER_TYPE
+                
+                POWER_UP_SOUND.play()
                     
                 player.power_up_time_up = power_up.start_time + (power_up.duration*1000)
                 

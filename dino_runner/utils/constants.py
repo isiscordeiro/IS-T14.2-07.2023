@@ -9,6 +9,9 @@ FPS = 30
 OBSTACLE_Y_POS = 330
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
+pygame.mixer.pre_init(44100, -16, 2, 2048)
+pygame.init()
+
 FONT_STYLE = "freesansbold.ttf"
 
 # Assets Constants
@@ -86,3 +89,6 @@ HAMMER_TYPE = "hammer"
 GAME_OVER = pygame.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
 
 RESET = pygame.image.load(os.path.join(IMG_DIR, 'Other/Reset.png'))
+
+DIE_SOUND = pygame.mixer.Sound('dino_runner/assets/Sounds/die.ogg')
+POWER_UP_SOUND = pygame.mixer.Sound('dino_runner/assets/Sounds/powerUp.ogg')
